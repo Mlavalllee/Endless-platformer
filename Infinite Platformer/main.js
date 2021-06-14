@@ -1,8 +1,7 @@
 // endless platformer
 
+// variables
 let start = 0;
-
-
 let Moveleft = false;
 let MoveRight = false;
 let jump = false;

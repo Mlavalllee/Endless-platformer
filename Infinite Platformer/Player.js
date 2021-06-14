@@ -1,9 +1,6 @@
 // Player library
 
-let X = 375;
-let Y = 675;
-let V = 0;
-let lost = false;
+
 
 function DrawPlayer() {
     Fill = "red";

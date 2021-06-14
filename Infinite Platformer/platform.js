@@ -1,6 +1,6 @@
 // platform library
 
-let PlatY = 700;
+
 
 function generateplatforms() {
     for (let i = 0; i < 15; i++) {

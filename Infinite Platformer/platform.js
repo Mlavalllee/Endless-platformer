@@ -16,7 +16,7 @@ function NewPlatform(InitX, InitY, InitW, InitH, InitS) {
         y: randomInt(0, 800),
         w: 200,
         h: 10,
-        s: 0.5
+        s: 1
     }
 }
 
@@ -45,7 +45,7 @@ function MovePlatform(APlat) {
 
 function collision(APlat) {
     if(Y >= APlat.y && Y <= APlat.y && X >= APlat.x && X <= APlat.x ) {
-       V = 5;
+       V = 0;
        console.log(1)
     }
 }

@@ -4,8 +4,6 @@ let X = 375;
 let Y = 675;
 let V = 0;
 let lost = false;
-let RightCanvas = false;
-let LeftCanvas = false;
 
 function DrawPlayer() {
     Fill = "red";
@@ -28,6 +26,8 @@ function MovePlayer() {
     V = V + 0.1;
     Y += V
     PlatY = PlatY + 25;
+
+    // move left, right, anbd stop player from walkiung out of canvas
     if (MoveRight == true && X < 775) {
         X += 4
     } else if (Moveleft == true && X > 0) {
@@ -43,12 +43,10 @@ function Jump() {
 }
 
 function collision(APlat) {
-    APlat.y = APlat.y - 25;
- if(Y >= APlat.y && Y <= APlat.y ) {
+ if(Y >= APlat.y && Y <= APlat.y && X >= APlat.x && X <= APlat.x ) {
     V = 5;
     console.log(1)
  }
- APlat.y = APlat.y + 25;
 }
 
 

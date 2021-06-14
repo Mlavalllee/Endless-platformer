@@ -43,3 +43,9 @@ function MovePlatform(APlat) {
     }
 }
 
+function collision(APlat) {
+    if(Y >= APlat.y && Y <= APlat.y && X >= APlat.x && X <= APlat.x ) {
+       V = 5;
+       console.log(1)
+    }
+}

@@ -38,7 +38,7 @@ function KeyUpHandler(event) {
     } else if(event.keyCode === 68) {
         MoveRight = false;
     } else if(event.keyCode === 87) {
-        jump = false;
+        jump = true;
     }
 }
 

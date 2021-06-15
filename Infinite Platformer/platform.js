@@ -28,7 +28,7 @@ function DrawPlatform(APlat) {
 
 // Move Ground Down
 function MoveGround() {
-    PlatY += 0.2;
+    PlatY += PlatV;
     if(PlatY >= 800) {
        PlatY = 900; 
     }
@@ -44,8 +44,41 @@ function MovePlatform(APlat) {
 }
 
 function collision(APlat) {
-    if(Y >= APlat.y && Y <= APlat.y && X >= APlat.x && X <= APlat.x ) {
-       V = 0;
-       console.log(1)
+    //platform vairables
+    let PX = APlat.x;
+    let PY = APlat.y;
+    let PX2 = APlat.x + 200;
+    let PY2 = APlat.y + 10;
+    //player vairables
+    let Y2 = Y + 25;
+    let X2 = X + 25;
+    // collision dectection
+    if(Y >= PY && Y <= PY2 && X <= PX && X >= PX2 || Y2 >= PY && Y2 <= PY2 && X2 >= PX && X2 <= PX2) {
+        jump = false;
+        InAir = false;
+    // top of platform collision
+    if(Y2 <= PY2 && X2 >= PX && X2 <= PX2) {
+        V = 1;
+        Y = PY - 25;
+    //bottom of platform collision
+     } else if (Y >= PY && X <= PX && X >= PX2) {
+        Y = PY2;
+        V = 1;
+        console.log(1)
+     }
+     // side of platoform collison
+    // else if () {
+
+    // }
+
+
+        // if() {
+
+      // }
+    } //  else if () {
+
+  //  } 
+    else  {
+        PlatTopCollisions = false;
     }
 }

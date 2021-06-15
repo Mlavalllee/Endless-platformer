@@ -12,4 +12,5 @@ let jump = false;
 let lost = false;
 let Moveleft = false;
 let MoveRight = false;
-let PlatTopCollisions = false
+let PlatTopCollisions = false;
+let GroundCollision = true;

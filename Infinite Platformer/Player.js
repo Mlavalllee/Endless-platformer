@@ -11,10 +11,15 @@ function DrawPlayer() {
 
 function MovePlayer() {
     PlatY = PlatY - 25
-    if (Y >= PlatY) {
+    if(jump == true && GroundCollision) {
+        GroundCollision = false;
+        Y--;
+        V = -7;
+    } else if (Y >= PlatY) {
+        GroundCollision = true;
         jump = false;
         InAir = false;
-        V = 0
+        V = 0.2;
     } else if(jump == true && InAir == false) {
         InAir = true
         jump = false
@@ -22,11 +27,10 @@ function MovePlayer() {
     } else if(Y >= 800) {
         lost = true;
         V = 0; 
-     }
-     if (PlatTopCollisions == false) {
+    } else if (PlatTopCollisions == false && GroundCollision == false) {
         V = V + 0.1;
-        Y += V
-     }
+    }
+    Y += V
     PlatY = PlatY + 25;
 
     // move left, right, anbd stop player from walkiung out of canvas

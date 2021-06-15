@@ -54,10 +54,10 @@ function collision(APlat) {
     let X2 = X + 25;
     // collision dectection
     if(Y >= PY && Y <= PY2 && X <= PX && X >= PX2 || Y2 >= PY && Y2 <= PY2 && X2 >= PX && X2 <= PX2) {
-        jump = false;
-        InAir = false;
     // top of platform collision
     if(Y2 <= PY2 && X2 >= PX && X2 <= PX2) {
+        jump = false;
+        InAir = false;
         V = 1;
         Y = PY - 25;
     //bottom of platform collision

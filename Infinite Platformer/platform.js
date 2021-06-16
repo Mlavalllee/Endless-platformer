@@ -21,7 +21,7 @@ function NewPlatform(InitX, InitY, InitW, InitH, InitS) {
 }
 
 function DrawPlatform(APlat) {
-    Fill = "#9c5a33"
+    Fill = "#FFFFFF"
     regtangle(APlat.x, APlat.y, APlat.w, APlat.h, Fill);
     regtangle(0, PlatY, 800, 100, "#9c5a33");
 }

@@ -2,6 +2,7 @@
 
 // global variables
 let start = 0;
+let Score = 0;
 let X = 375;
 let Y = 675;
 let V = 0;
@@ -14,4 +15,3 @@ let Moveleft = false;
 let MoveRight = false;
 let GroundCollision = true;
 let CanvasJump = true;
-let PInCanvasEl = document.getElementById("PInCanvas");

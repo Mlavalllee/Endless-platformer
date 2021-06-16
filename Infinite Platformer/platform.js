@@ -12,8 +12,8 @@ function generateplatforms() {
 // platform variables
 function NewPlatform(InitX, InitY, InitW, InitH, InitS) {
     return {
-        x: randomInt(0, 700),
-        y: randomInt(0, 800),
+        x: randomInt(0, 600),
+        y: randomInt(0, 600),
         w: 200,
         h: 10,
         s: 1
@@ -38,7 +38,7 @@ function MoveGround() {
 function MovePlatform(APlat) {
     APlat.y += APlat.s;
     if (APlat.y >= 810) {
-        APlat.y = randomInt(-147, -10);
+        APlat.y = randomInt(-1, -10);
         APlat.x = randomInt(0, 700);
     }
 }
@@ -47,38 +47,26 @@ function collision(APlat) {
     //platform vairables
     let PX = APlat.x;
     let PY = APlat.y;
-    let PX2 = APlat.x + 200;
-    let PY2 = APlat.y + 10;
+    let PX2 = APlat.x + APlat.w;
+    let PY2 = APlat.y + APlat.h;
     //player vairables
     let Y2 = Y + 25;
     let X2 = X + 25;
-    // collision dectection
-    if(Y >= PY && Y <= PY2 && X <= PX && X >= PX2 || Y2 >= PY && Y2 <= PY2 && X2 >= PX && X2 <= PX2) {
-    // top of platform collision
-    if(Y2 <= PY2 && X2 >= PX && X2 <= PX2) {
-        jump = false;
-        InAir = false;
-        V = 1;
-        Y = PY - 25;
-    //bottom of platform collision
-     } else if (Y >= PY && X <= PX && X >= PX2) {
-        Y = PY2;
-        V = 1;
-        console.log(1)
-     }
-     // side of platoform collison
-    // else if () {
-
-    // }
-
-
-        // if() {
-
-      // }
-    } //  else if () {
-
-  //  } 
-    else  {
-        PlatTopCollisions = false;
+    // phyase through platforms if on the ground 
+    if(GroundCollision == false) {
+        // collision dectection
+        if(Y <= PY2 && X <= PX2 && Y2 >= PY && X2 >= PX) {
+            // collision
+            if(V > 0) {
+                CanvasJump = false;
+                jump = false;
+                InAir = false; 
+                CanvasJump = false;
+                V = 0.9;
+            } else if ( V < 0) {
+                Y = PY2;
+                V = 1.2;
+            }
+        }
     }
 }

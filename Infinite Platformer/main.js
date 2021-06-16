@@ -1,7 +1,11 @@
 // endless platformer
 
-// variables
+// load text
+LoadStartingText();
 
+function LoadStartingText() {
+    PInCanvasEl = "test"
+}
 
 //canvas setup
 let cnv = document.getElementById("MyCanvas");
@@ -45,7 +49,7 @@ function KeyUpHandler(event) {
 // Draw loop
  function Draw() {
    //Clear Canvas
-   ctx.clearRect(0, 0, cnv.width, cnv.height);
+    ctx.clearRect(0, 0, cnv.width, cnv.height);
     //move and draw player
     MovePlayer();
     DrawPlayer();

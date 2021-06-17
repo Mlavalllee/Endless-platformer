@@ -59,20 +59,17 @@ function collision(APlat) {
         // collision dectection
         if(Y <= PY2 && X <= PX2 && Y2 >= PY && X2 >= PX) {
             // collision
-            if(V > 0) {
+             if( V < 0) {
+                Y = PY2 + 15;
+                V = 1; 
+            } else if(V > 0) {
                 ForceFall = false;
                 CanvasJump = false;
                 jump = false;
                 InAir = false; 
                 CanvasJump = false;
                 V = 0.9;
-            } else if( V < 0) {
-                Y = PY2;
-                V = 1.2;
-            } else if(X <= PX2) {  
-             
-            } else if (X2 >= PX) {
-    
+                Y = PY - 26;
             }
         }
     }

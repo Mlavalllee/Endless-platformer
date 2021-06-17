@@ -40,7 +40,10 @@ function MovePlayer() {
 // Sideways Movement and Canvas jump
 function BasicMovement() {
     // move left, right, and stop player from walking out of canvas
-    if (MoveRight == true && X < 775) {
+     if(ForceFall == true) {
+        ForceFall = false;
+        V = 3;
+    } else if (MoveRight == true && X < 775) {
         X += 4
     } else if (Moveleft == true && X > 0) {
         X += -4

@@ -49,6 +49,8 @@ function collision(APlat) {
     let PY = APlat.y;
     let PX2 = APlat.x + APlat.w;
     let PY2 = APlat.y + APlat.h;
+    let IgnnoreBottomCollision = PX + 5;
+    let IngnoreTopCollision = PX2 - 5;
     //player vairables
     let Y2 = Y + 25;
     let X2 = X + 25;
@@ -58,14 +60,19 @@ function collision(APlat) {
         if(Y <= PY2 && X <= PX2 && Y2 >= PY && X2 >= PX) {
             // collision
             if(V > 0) {
+                ForceFall = false;
                 CanvasJump = false;
                 jump = false;
                 InAir = false; 
                 CanvasJump = false;
                 V = 0.9;
-            } else if ( V < 0) {
+            } else if( V < 0) {
                 Y = PY2;
                 V = 1.2;
+            } else if(X <= PX2) {  
+             
+            } else if (X2 >= PX) {
+    
             }
         }
     }

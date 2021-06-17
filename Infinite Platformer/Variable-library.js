@@ -15,3 +15,4 @@ let Moveleft = false;
 let MoveRight = false;
 let GroundCollision = true;
 let CanvasJump = true;
+let ForceFall = false;
